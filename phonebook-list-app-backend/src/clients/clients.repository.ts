@@ -1,6 +1,14 @@
-/*import { Repository, EntityRepository } from 'typeorm';
+import { Repository, EntityRepository } from 'typeorm';
 import { Clients } from './clients.entity';
 import { CreateClientDTO } from './dto/creatclients.dto';
+
+/*@EntityRepository(Clients)
+export class ClientsRepository extends Repository<Clients> {
+  createClient = async (createClientDTO: CreateClientDTO) => {
+    return await this.save(createClientDTO);
+  };
+}*/
+
 @EntityRepository(Clients)
 export class ClientsRepository extends Repository<Clients> {
 
@@ -18,7 +26,7 @@ export class ClientsRepository extends Repository<Clients> {
     client.datereg = datereg;
 
 
-  //  await client.save();
+    await this.save(createClientDTO);
     return client;
   }
 
@@ -34,8 +42,7 @@ export class ClientsRepository extends Repository<Clients> {
     addClient.phone = phone;
     addClient.email = email;
     addClient.datereg = datereg;
-    //await addClient.save();
-
+    await this.save(createClientDTO);
     return addClient;
   }
-}*/
+}

@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { config } from './orm.config';
 import { ClientsModule } from './clients/clients.module';
+
 @Module({
   imports: [TypeOrmModule.forRoot(config), ClientsModule],
   controllers: [AppController],
