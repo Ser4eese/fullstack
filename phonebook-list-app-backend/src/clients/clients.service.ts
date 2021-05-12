@@ -27,7 +27,7 @@ export class ClientsService {
          if (!updatedClient) {
         throw new NotFoundException('Client not found');
         }
-        return this.ClientsRepository.addClient(createClientDTO, updatedClient);
+        return this.repo.addClient(createClientDTO, updatedClient);
         }*/
 
     async deleteClient(clientID): Promise<any> {
