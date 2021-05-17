@@ -1,169 +1,32 @@
 <template>
-  <v-data-table
+      <v-data-table
     :headers="headers"
-    :items="desserts"
-    :items-per-page="5"
+    :items="clients"
+    :items-per-page="25"
     class="elevation-1"
   ></v-data-table>
 </template>
-
 <script>
-  export default {
-    data () {
-      return {
-        headers: [
-          {
-            text: 'Dessert (100g serving)',
-            align: 'start',
-            sortable: false,
-            value: 'name',
-          },
-          { text: 'Calories', value: 'calories' },
-          { text: 'Fat (g)', value: 'fat' },
-          { text: 'Carbs (g)', value: 'carbs' },
-          { text: 'Protein (g)', value: 'protein' },
-          { text: 'Iron (%)', value: 'iron' },
-        ],
-        desserts: [
-          {
-            name: 'Frozen Yogurt',
-            calories: 159,
-            fat: 6.0,
-            carbs: 24,
-            protein: 4.0,
-            iron: '1%',
-          },
-          {
-            name: 'Ice cream sandwich',
-            calories: 237,
-            fat: 9.0,
-            carbs: 37,
-            protein: 4.3,
-            iron: '1%',
-          },
-          {
-            name: 'Eclair',
-            calories: 262,
-            fat: 16.0,
-            carbs: 23,
-            protein: 6.0,
-            iron: '7%',
-          },
-          {
-            name: 'Cupcake',
-            calories: 305,
-            fat: 3.7,
-            carbs: 67,
-            protein: 4.3,
-            iron: '8%',
-          },
-          {
-            name: 'Gingerbread',
-            calories: 356,
-            fat: 16.0,
-            carbs: 49,
-            protein: 3.9,
-            iron: '16%',
-          },
-          {
-            name: 'Jelly bean',
-            calories: 375,
-            fat: 0.0,
-            carbs: 94,
-            protein: 0.0,
-            iron: '0%',
-          },
-          {
-            name: 'Lollipop',
-            calories: 392,
-            fat: 0.2,
-            carbs: 98,
-            protein: 0,
-            iron: '2%',
-          },
-          {
-            name: 'Honeycomb',
-            calories: 408,
-            fat: 3.2,
-            carbs: 87,
-            protein: 6.5,
-            iron: '45%',
-          },
-          {
-            name: 'Donut',
-            calories: 452,
-            fat: 25.0,
-            carbs: 51,
-            protein: 4.9,
-            iron: '22%',
-          },
-          {
-            name: 'KitKat',
-            calories: 518,
-            fat: 26.0,
-            carbs: 65,
-            protein: 7,
-            iron: '6%',
-          },
-        ],
-      }
-    },
-  }
-</script>
-<!--
-<template>
-  <div class="container-fluid">
-    <div class="text-center">
-      <h1>Nest Customer List App Tutorial</h1>
-      <p>Built with Nest.js, Vue.js and Postgres</p>
-      <div v-if="customers.length === 0">
-        <h2>No customer found at the moment</h2>
-      </div>
-    </div>
 
-    <div class="">
-      <table class="table table-bordered">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">Firstname</th>
-            <th scope="col">Lastname</th>
-            <th scope="col">Email</th>
-            <th scope="col">Phone</th>
-            <th scope="col">Address</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="clients in clients" :key="clients._id">
-            <td>{{ clients.first_name }}</td>
-            <td>{{ clients.last_name }}</td>
-            <td>{{ clients.email }}</td>
-            <td>{{ clients.phone }}</td>
-            <td>{{ clients.address }}</td>
-            <td>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group" style="margin-bottom: 20px">
-                  <button
-                    class="btn btn-sm btn-outline-secondary"
-                    v-on:click="deleteClient(clients._id)"
-                  >
-                    Delete Customer
-                  </button>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</template>
-<script>
 import { server } from "../helper";
 import axios from "axios";
 export default {
   data() {
     return {
-      clients: [],
+      headers: [
+          {
+            text: 'id',
+            align: 'start',
+            value: 'id',
+          },
+          { text: 'Имя', value: 'first_name' },
+          { text: 'Фамилия', value: 'last_name'},
+          { text: 'Адрес', value: 'address'},
+          { text: 'Телефон', value: 'phone'},
+          { text: 'E-mail', value: 'email'},
+          { text: 'Дата регистарции', value: 'datareg'}
+        ],
+      clients: []
     };
   },
   created() {
@@ -172,17 +35,17 @@ export default {
   methods: {
     fetchClients() {
       axios
-        .get(`${server.baseURL}/clients/clients`)
-        .then((data) => (this.clients = data.data));
+        .get(`${server.baseURL}/clients`)
+        .then(data => (this.clients = data.data));
     },
-    deleteClient(id) {
+    deleteClients(id) {
       axios
         .delete(`${server.baseURL}/clients/delete?clientID=${id}`)
-        .then((data) => {
+        .then(data => {
           console.log(data);
           window.location.reload();
         });
-    },
-  },
+    }
+  }
 };
-</script>-->
+</script>
