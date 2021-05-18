@@ -1,53 +1,33 @@
-## Description
+## Описание
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Тестовое задание для fullstack: Создание телефонного справочника на Nest.js и VueJS (Vuetify)
 
-## Installation
-
-```bash
-$ npm install
-```
-
-## Running the app
+## Запуск
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
+# Запускаем nest в папке phonebook-list-app-backend
 $ npm run start:dev
 
-# incremental rebuild (webpack)
-$ npm run webpack
-$ npm run start:hmr
-
-# production mode
-$ npm run start:prod
+# Далее запускаем vue в папке client-list-app-frontend
+$ npm run serve
 ```
 
-## Test
+## Адреса
 
 ```bash
-# unit tests
-$ npm run test
+# Api находится по адресу
+http://localhost:3000/
 
-# e2e tests
-$ npm run test:e2e
+# Vue находится по адресу 
+http://localhost:8080/
 
-# test coverage
-$ npm run test:cov
+# Для подключения к БД были использованы следующие настройки
+    type: 'postgres',       //Тип БД
+    username: 'postgres',   //Пользователь
+    password: 'pass',       //Пароль
+    port: 5432,             //Порт
+    host: '127.0.0.1',      
+    database: 'Clients',    //Имя БД
+    synchronize: true,
+    entities: ['dist/**/*.entity{.ts,.js}']
 ```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-  Nest is [MIT licensed](LICENSE).
