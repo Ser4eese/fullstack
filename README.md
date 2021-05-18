@@ -24,6 +24,7 @@ http://localhost:3000/
 http://localhost:8080/
 
 # Для подключения к БД были использованы следующие настройки
+# Изменять текущие настройки \phonebook-list-app-backend\src\orm.config
     type: 'postgres',       //Тип БД
     username: 'postgres',   //Пользователь
     password: 'pass',       //Пароль
