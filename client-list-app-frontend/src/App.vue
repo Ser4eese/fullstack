@@ -5,11 +5,11 @@
       color="primary"
       dark
     >
-    <v-btn to='/'>
+    <v-btn class="mr-4" to='/'>
       Главная
     </v-btn>
 
-    <v-btn to='/create'> 
+    <v-btn class="mr-4" to='/create'> 
       Создать
     </v-btn>
     

@@ -110,7 +110,7 @@ export default {
         if (!this.$v.phone.$dirty) return errors
         !this.$v.phone.maxLength && errors.push('Телефон должен состоять не более чем из 9 символов.')
         !this.$v.phone.required && errors.push('Телефон обязательно.')
-        !this.$v.phone.numeric && errors.push('Телефон длжен состоять из цифр')
+        !this.$v.phone.numeric && errors.push('Телефон должен состоять из цифр')
         return errors
       },
       emailErrors () {

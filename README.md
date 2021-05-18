@@ -5,6 +5,8 @@
 ## Запуск
 
 ```bash
+# Дамп базы данных находится в файле Clients_dump.sql
+
 # Запускаем nest в папке phonebook-list-app-backend
 $ npm run start:dev
 
