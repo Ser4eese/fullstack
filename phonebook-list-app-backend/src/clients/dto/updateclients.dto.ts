@@ -12,5 +12,5 @@ export class UpdateClientDTO{
 
     readonly email:string;
 
-    readonly datereg:Date;
+    readonly datereg:string;
 }

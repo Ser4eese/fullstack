@@ -1,6 +1,4 @@
 export class CreateClientDTO{
-    
-    readonly id:number;
 
     readonly first_name: string;
 
@@ -12,5 +10,5 @@ export class CreateClientDTO{
 
     readonly email:string;
 
-    readonly datereg:Date;
+    readonly datereg:string;
 }

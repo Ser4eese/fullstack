@@ -41,7 +41,8 @@ export class ClientsRepository extends Repository<Clients> {
     addClient.last_name = last_name;
     addClient.phone = phone;
     addClient.email = email;
-    addClient.datereg = datereg;
+    let now = new Date();
+    addClient.datereg = `${now.getFullYear}-${now.getMonth} + ${now.getDay}`;
     await this.save(createClientDTO);
     return addClient;
   }

@@ -14,17 +14,13 @@ export default {
   data() {
     return {
       headers: [
-          {
-            text: 'id',
-            align: 'start',
-            value: 'id',
-          },
+
           { text: 'Имя', value: 'first_name' },
           { text: 'Фамилия', value: 'last_name'},
           { text: 'Адрес', value: 'address'},
           { text: 'Телефон', value: 'phone'},
           { text: 'E-mail', value: 'email'},
-          { text: 'Дата регистарции', value: 'datareg'}
+          { text: 'Дата регистарции', value: 'datereg'}
         ],
       clients: []
     };

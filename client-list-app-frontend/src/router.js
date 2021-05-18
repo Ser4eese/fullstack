@@ -7,8 +7,8 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   routes: [
-    { path: '/', redirect: { name: 'home' } },
-    { path: '/home', name: 'Home', component: HomeComponent },
+    { path: '/', name: 'Home', component: HomeComponent },
+  //  { path: '/home', name: 'Home', component: HomeComponent },
     { path: '/create', name: 'Create', component: CreateComponent },
     //{ path: '/list', name: 'List', component: ListComponent },
   ]
